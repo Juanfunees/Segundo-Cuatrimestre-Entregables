@@ -1,19 +1,23 @@
+export class auto {
+  marca: string;
+  modelo: string;
+  anio: number;
 
-import { auto } from "./main";
+  constructor(pMarca: string, pModelo: string, pAnio: number) {
+    this.marca = pMarca;
+    this.modelo = pModelo;
+    this.anio = pAnio;
+  }
 
-let car1 = new auto("Ford", "Focus", 2018);
-let car2 = new auto("Volkswagen", "Vento", 2020);
-let car3 = new auto("Ford", "Mondeo", 2024);
-let car4 = new auto("Chevrolet", "Cruze", 2015);
+  acelerar(): void {
+    console.log(
+      `El ${this.marca} ${this.modelo} del año ${this.anio} se encuentra acelerando.`
+    );
+  }
 
-car1.acelerar();
-car1.frenar();
-
-car2.acelerar();
-car2.frenar();
-
-car3.acelerar();
-car3.frenar();
-
-car4.acelerar();
-car4.frenar();
+  frenar(): void {
+    console.log(
+      `El ${this.marca} ${this.modelo} del año ${this.anio} esta frenando.`
+    );
+  }
+}
