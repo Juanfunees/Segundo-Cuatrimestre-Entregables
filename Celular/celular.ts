@@ -30,7 +30,7 @@ export class Phone {
   public getmodelo(): string {
     return this.modelo;
   }
-  public getsistemaOpertaivo(): string {
+  public getSistemaOpertaivo(): string {
     return this.sistemaOperativo;
   }
   public getmemoriaRam(): number {

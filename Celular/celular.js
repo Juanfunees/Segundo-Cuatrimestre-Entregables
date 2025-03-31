@@ -23,7 +23,7 @@ var Phone = /** @class */ (function () {
     Phone.prototype.getmodelo = function () {
         return this.modelo;
     };
-    Phone.prototype.getsistemaOpertaivo = function () {++
+    Phone.prototype.getSistemaOpertaivo = function () {
         return this.sistemaOperativo;
     };
     Phone.prototype.getmemoriaRam = function () {
