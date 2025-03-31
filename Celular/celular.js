@@ -1,34 +1,50 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var index_1 = require("./index");
-var phone1 = new index_1.Phone("Iphone", "16 Pro", "Ios", 16, 128, false);
-var phone2 = new index_1.Phone("Samsung", "Galaxy Z Fold", "Android"); // No le asigno valores entonces toma por default los del constructor
-var phone3 = new index_1.Phone();
-phone1.encenderApagar();
-phone2.encenderApagar();
-phone1.mostrarInfo();
-phone2.mostrarInfo();
-console.log(phone1.getmarca());
-console.log(phone1.getmodelo());
-console.log(phone1.getsistemaOpertaivo());
-console.log(phone1.getmemoriaRam());
-console.log(phone1.getalmacenamientoInterno());
-console.log(phone1.getestadoDeEncendido());
-console.log("------------------------------");
-console.log(phone2.getmarca());
-console.log(phone2.getmodelo());
-console.log(phone2.getsistemaOpertaivo());
-console.log(phone2.getmemoriaRam());
-console.log(phone2.getalmacenamientoInterno());
-console.log(phone2.getestadoDeEncendido());
-console.log("------------------------------");
-console.log(phone3.getmarca());
-console.log(phone3.getmodelo());
-console.log(phone3.getsistemaOpertaivo());
-console.log(phone3.getmemoriaRam());
-console.log(phone3.getalmacenamientoInterno());
-console.log(phone3.getestadoDeEncendido());
-console.log("------------------------------");
-// setter cambiamos xiaomi por iphone
-phone3.setMarca("Apple");
-console.log(phone3.getmarca());
+exports.Phone = void 0;
+var Phone = /** @class */ (function () {
+    function Phone(Pmarca, Pmodelo, PsistemaOperativo, PmemoriaRam, PalmacenamientoInterno, PestadoDeEncendido) {
+        if (Pmarca === void 0) { Pmarca = "Xiaomi"; }
+        if (Pmodelo === void 0) { Pmodelo = "Redmi Note"; }
+        if (PsistemaOperativo === void 0) { PsistemaOperativo = "Android"; }
+        if (PmemoriaRam === void 0) { PmemoriaRam = 4; }
+        if (PalmacenamientoInterno === void 0) { PalmacenamientoInterno = 64; }
+        if (PestadoDeEncendido === void 0) { PestadoDeEncendido = false; }
+        this.marca = Pmarca;
+        this.modelo = Pmodelo;
+        this.sistemaOperativo = PsistemaOperativo;
+        this.memoriaRam = PmemoriaRam;
+        this.almacenamientoInterno = PalmacenamientoInterno;
+        this.estadoDeEncendido = PestadoDeEncendido;
+    }
+    // Getters
+    Phone.prototype.getmarca = function () {
+        return this.marca;
+    };
+    Phone.prototype.getmodelo = function () {
+        return this.modelo;
+    };
+    Phone.prototype.getsistemaOpertaivo = function () {++
+        return this.sistemaOperativo;
+    };
+    Phone.prototype.getmemoriaRam = function () {
+        return this.memoriaRam;
+    };
+    Phone.prototype.getalmacenamientoInterno = function () {
+        return this.almacenamientoInterno;
+    };
+    Phone.prototype.getestadoDeEncendido = function () {
+        return this.estadoDeEncendido;
+    };
+    // Setters
+    Phone.prototype.setMarca = function (nuevaMarca) {
+        this.marca = nuevaMarca;
+    };
+    Phone.prototype.encenderApagar = function () {
+        this.estadoDeEncendido = !this.estadoDeEncendido;
+    };
+    Phone.prototype.mostrarInfo = function () {
+        return "Marca: ".concat(this.marca, "\n    Modelo: ").concat(this.modelo, "\n    Sistema Operativo: ").concat(this.sistemaOperativo, "\n    Memoria RAM: ").concat(this.memoriaRam, "\n    Almacenamiento Interno: ").concat(this.almacenamientoInterno, "\n    Estado de Encendido: ").concat(this.estadoDeEncendido);
+    };
+    return Phone;
+}());
+exports.Phone = Phone;

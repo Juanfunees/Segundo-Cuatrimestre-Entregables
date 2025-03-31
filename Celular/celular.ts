@@ -1,44 +1,64 @@
-import { Phone } from "./index";
+export class Phone {
+  private marca: string;
+  private modelo: string;
+  private sistemaOperativo: string;
+  private memoriaRam: number;
+  private almacenamientoInterno: number;
+  private estadoDeEncendido: boolean;
 
-let phone1 = new Phone("Iphone", "16 Pro", "Ios", 16, 128, false);
-let phone2 = new Phone("Samsung", "Galaxy Z Fold", "Android"); // No le asigno valores entonces toma por default los del constructor
-let phone3 = new Phone();
+  constructor(
+    Pmarca: string = "Xiaomi",
+    Pmodelo: string = "Redmi Note",
+    PsistemaOperativo: string = "Android",
+    PmemoriaRam: number = 4,
+    PalmacenamientoInterno: number = 64,
+    PestadoDeEncendido: boolean = false
+  ) {
+    this.marca = Pmarca;
+    this.modelo = Pmodelo;
+    this.sistemaOperativo = PsistemaOperativo;
+    this.memoriaRam = PmemoriaRam;
+    this.almacenamientoInterno = PalmacenamientoInterno;
+    this.estadoDeEncendido = PestadoDeEncendido;
+  }
 
-phone1.encenderApagar();
-phone2.encenderApagar();
+  // Getters
 
-phone1.mostrarInfo();
-phone2.mostrarInfo();
+  public getmarca(): string {
+    return this.marca;
+  }
+  public getmodelo(): string {
+    return this.modelo;
+  }
+  public getsistemaOpertaivo(): string {
+    return this.sistemaOperativo;
+  }
+  public getmemoriaRam(): number {
+    return this.memoriaRam;
+  }
+  public getalmacenamientoInterno(): number {
+    return this.almacenamientoInterno;
+  }
+  public getestadoDeEncendido(): boolean {
+    return this.estadoDeEncendido;
+  }
 
-console.log(phone1.getmarca());
-console.log(phone1.getmodelo());
-console.log(phone1.getsistemaOpertaivo());
-console.log(phone1.getmemoriaRam());
-console.log(phone1.getalmacenamientoInterno());
-console.log(phone1.getestadoDeEncendido());
+  // Setters
 
-console.log("------------------------------");
+  public setMarca(nuevaMarca: string): void {
+    this.marca = nuevaMarca;
+  }
 
-console.log(phone2.getmarca());
-console.log(phone2.getmodelo());
-console.log(phone2.getsistemaOpertaivo());
-console.log(phone2.getmemoriaRam());
-console.log(phone2.getalmacenamientoInterno());
-console.log(phone2.getestadoDeEncendido());
+  public encenderApagar(): void {
+    this.estadoDeEncendido = !this.estadoDeEncendido;
+  }
 
-console.log("------------------------------");
-
-console.log(phone3.getmarca());
-console.log(phone3.getmodelo());
-console.log(phone3.getsistemaOpertaivo());
-console.log(phone3.getmemoriaRam());
-console.log(phone3.getalmacenamientoInterno());
-console.log(phone3.getestadoDeEncendido());
-
-console.log("------------------------------");
-
-// setter cambiamos xiaomi por iphone
-
-phone3.setMarca("Apple");
-
-console.log(phone3.getmarca());
+  public mostrarInfo() {
+    return `Marca: ${this.marca}
+    Modelo: ${this.modelo}
+    Sistema Operativo: ${this.sistemaOperativo}
+    Memoria RAM: ${this.memoriaRam}
+    Almacenamiento Interno: ${this.almacenamientoInterno}
+    Estado de Encendido: ${this.estadoDeEncendido}`;
+  }
+}
