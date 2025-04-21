@@ -13,6 +13,19 @@ export class CursoDeArte {
   }
 
   public agregarAlumno(alumno: AlumnoArte): void {
+    const existe = this.alumnos.some(
+      (a) =>
+        a.getNombre() === alumno.getNombre() &&
+        a.getApellido() === alumno.getApellido()
+    );
+    if (existe) {
+      console.log(
+        `⚠️ El alumno ${alumno.getNombre()} ${alumno.getApellido()} ya está inscrito en ${
+          this.nombreCurso
+        }.`
+      );
+      return;
+    }
     this.alumnos.push(alumno);
   }
 

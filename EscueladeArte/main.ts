@@ -2,6 +2,7 @@ import { CursoDeArte } from "./Modelos/curso";
 import { EscuelaDeArte } from "./Modelos/escuela";
 import { ProfesorArte } from "./Modelos/profesorArte";
 import { AlumnoArte } from "./Modelos/alumno";
+import { Identidad } from "./Modelos/identidad";
 
 const escuelaDeArte = new EscuelaDeArte();
 
@@ -34,40 +35,25 @@ escuelaDeArte.agregarCurso(cursoFotografia);
 escuelaDeArte.agregarCurso(cursoPintura);
 escuelaDeArte.agregarCurso(cursoPaisajismo);
 
-console.log(`
-🖌️🎨🎭 BIENVENIDOS A LA GALERÍA DOCENTE 🎭🎨🖌️
------- PRESENTACIÓN DE PROFESORES ------
-`);
+console.log(`\n🖌️🎨🎭 BIENVENIDOS A LA GALERÍA DE IDENTIDADES 🎭🎨🖌️`);
+const comunidad: Identidad[] = [
+  profesorPintura,
+  profesorPaisajismo,
+  profesorFotografia,
+  alumno1,
+  alumno2,
+  alumno3,
+  alumno4,
+  alumno5,
+];
+comunidad.forEach((miembro) => miembro.presentar());
 
-profesorPintura.presentar();
-profesorPaisajismo.presentar();
-profesorFotografia.presentar();
-console.log("\n");
-
-console.log(`
-🎨🎒 BIENVENIDOS AL MUSEO DE MENTES BRILLANTES 🎒🎨
------- PRESENTACIÓN DE ESTUDIANTES ------
-`);
-
-alumno1.presentar();
-alumno2.presentar();
-alumno3.presentar();
-alumno4.presentar();
-alumno5.presentar();
-console.log("\n");
-
-console.log(`
-🎨🎭 BIENVENIDOS AL CATALOGO DE CURSOS 🎭🎨
------------ TODA LA INFO AQUÍ -----------
-`);
-
+console.log(
+  "\n🎨🎭 BIENVENIDOS AL CATÁLOGO DE CURSOS 🎭🎨\n----------- TODA LA INFO AQUÍ -----------"
+);
 escuelaDeArte.mostrarCursosDisponibles();
 
-console.log(`
-🎨🎭 BIENVENIDOS A LA GALERÍA DE ALUMNOS 🎭🎨
------------ CURSOS Y ALUMNOS -----------
-`);
-
+console.log("\n🎨🎭 GALERÍA DE ALUMNOS POR CURSO 🎭🎨");
 escuelaDeArte.listarAlumnosDeCurso("Fotografía");
 escuelaDeArte.listarAlumnosDeCurso("Pintura");
 escuelaDeArte.listarAlumnosDeCurso("Paisajismo");

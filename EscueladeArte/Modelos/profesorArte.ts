@@ -1,4 +1,4 @@
-import { Identidad } from "./persona";
+import { Identidad } from "./identidad";
 
 export class ProfesorArte extends Identidad {
   protected especialidad: string;

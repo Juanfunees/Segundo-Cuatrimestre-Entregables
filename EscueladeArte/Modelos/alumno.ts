@@ -1,4 +1,4 @@
-import { Identidad } from "./persona";
+import { Identidad } from "./identidad";
 
 export class AlumnoArte extends Identidad {
   protected nivel: number;
@@ -15,7 +15,7 @@ export class AlumnoArte extends Identidad {
       }.`
     );
   }
-  
+
   public setNivel(Nivel: number) {
     this.nivel = Nivel;
   }
