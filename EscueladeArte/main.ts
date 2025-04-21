@@ -57,3 +57,4 @@ console.log("\n🎨🎭 GALERÍA DE ALUMNOS POR CURSO 🎭🎨");
 escuelaDeArte.listarAlumnosDeCurso("Fotografía");
 escuelaDeArte.listarAlumnosDeCurso("Pintura");
 escuelaDeArte.listarAlumnosDeCurso("Paisajismo");
+
