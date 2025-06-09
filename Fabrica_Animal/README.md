@@ -1,9 +1,3 @@
-
----
-
-### 🐾 `README.md` para la Fábrica de Animales
-
-```md
 ## 🐶🐱🐦 Fábrica de Animales – Patrón Factory
 
 ### 📋 Descripción
@@ -36,7 +30,18 @@ Cada clase implementa la interfaz `Animal`.
 
 #### 🔹 Parte 3 – Clase `AnimalFactory`
 
-Contiene un método estático:
+Contiene un método estático que decide qué tipo de animal crear según un parámetro de entrada:
 
 ```ts
-crearAnimal(tipo: string): Animal | null
+static crearAnimal(tipo: string): Animal | null {
+  switch (tipo.toLowerCase()) {
+    case "perro":
+      return new Perro();
+    case "gato":
+      return new Gato();
+    case "pajaro":
+      return new Pajaro();
+    default:
+      return null;
+  }
+}
